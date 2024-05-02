@@ -1,0 +1,77 @@
+@import '../../../_css/common';
+
+.small_filters {
+    background-color: #fff;
+    top: 30%;
+    left: 0%;
+    overflow: hidden;
+    position: fixed;
+    display: none;
+    z-index: 999;
+    @include small-break {
+      display: block;
+    }
+}
+
+.filters {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include large-break {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  @include small-break {
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+  }
+
+  @include small-break {
+    margin-top: 16px;
+  }
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+
+  @include large-break {
+    flex-direction: row;
+  }
+
+  @include small-break {
+    flex-direction: column;
+  }
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.priceSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.sliderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  p {
+    white-space: nowrap;
+  }
+}
+
+.hr {
+  margin: 20px 0;
+}
+
