@@ -24,10 +24,6 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
   const [active, setActive] = useState<string | null>(null)
   return (
     <div className={[classes.nav, user === undefined && classes.hide, 'py-8'].filter(Boolean).join(' ')}>
-      {/* {navItems.map(({ link }, i) => {
-        return <CMSLink key={i}  {...link} appearance="none" />
-      })}
-       */}
       <Menu setActive={setActive}>
         {
           navItems.map((navGroup, i) => (
