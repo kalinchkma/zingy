@@ -67,7 +67,6 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
         <CartLink className='font-bold' />
       </div>
       
-      
     </div>
   )
 }
