@@ -34,14 +34,14 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
              <div className='flex flex-col text-sm divide-y'>
              {navGroup?.navCollections?.navGroup.map( (navLink, i) => (
                <HoveredLink href={navLink.link?.url} target={navLink.link?.newTab ? "_blank": ""}>
-                {navLink.link?.label}
-                {navLink.link?.toltip.map((t, i) =>(
+                  {navLink.link?.label}
+                  {navLink.link?.toltip.map((t, i) =>(
 
-                <div key={i} className={cn('inline-block p-2 rounded-full bg-yellow-400 text-teal-950 text-[13px]')}>
-                   {t.toltipType === "new" ? "New": t?.customMessage}
-                </div>
-                ))}
-                
+                  <div key={i} className={cn('inline-block p-2 rounded-full bg-yellow-400 text-teal-950 text-[13px]')}>
+                    {t.toltipType === "new" ? "New": t?.customMessage}
+                  </div>
+                  ))}
+                  
                 </HoveredLink>
              )
              )}

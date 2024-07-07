@@ -25,14 +25,13 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     <div className={[classes.header,noHeaderFooterUrls.includes(pathname) && classes.hide]
         .filter(Boolean)
         .join(' ')}>
-        <Gutter className={classes.wrap}>
+        <Gutter className={classes.wrap}>     
           {
           typeof brandLogo !== "string" &&
           <Link href="/">
-            <MediaImage resource={brandLogo} className='w-[170px] h-auto' />
+            <MediaImage resource={brandLogo} className='w-[100px] h-auto' />
           </Link>
           }
-
           <HeaderNav header={header} />
         </Gutter>
     </div>
@@ -47,7 +46,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
           {
           typeof brandLogo !== "string" &&
           <Link href="/">
-            <MediaImage resource={brandLogo} className='w-[170px] h-auto' />
+            <MediaImage resource={brandLogo} className='w-[100px] h-auto' />
           </Link>
           }
 
