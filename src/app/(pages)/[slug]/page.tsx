@@ -24,6 +24,7 @@ import Categories from '../../_components/Categories'
 import Promotion from '../../_components/Promotion'
 
 import classes from './index.module.scss'
+import { HomePageSearch } from '../../_components/HomePageSearch'
 
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
@@ -63,7 +64,9 @@ export default async function Pages({ params: { slug = 'home' } }) {
     <React.Fragment>
       {slug === 'home' ? (
         <section>
-          <Hero {...hero} />
+          {/* <Hero {...hero} /> */}
+          {/* home page search */}
+          <HomePageSearch />
 
           <Gutter className={classes.home}>
             <Categories categories={categories} />
