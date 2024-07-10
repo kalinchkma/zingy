@@ -21,6 +21,7 @@ import { generateMeta } from '../../_utilities/generateMeta'
 export const dynamic = 'force-dynamic'
 
 import Categories from '../../_components/Categories'
+import DefaultHomePage from '../../_components/DefaultHomePage'
 import { HomePageSearch } from '../../_components/HomePageSearch'
 import Promotion from '../../_components/Promotion'
 
@@ -66,12 +67,12 @@ export default async function Pages({ params: { slug = 'home' } }) {
         <section>
           {/* <Hero {...hero} /> */}
           {/* home page search */}
-          <HomePageSearch />
+          <DefaultHomePage />
 
-          <Gutter className={classes.home}>
+          {/* <Gutter className={classes.home}>
             <Categories categories={categories} />
             <Promotion />
-          </Gutter>
+          </Gutter> */}
         </section>
       ) : (
         <>
