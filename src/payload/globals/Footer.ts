@@ -1,7 +1,5 @@
 import type { GlobalConfig } from 'payload/types'
 
-import link from '../fields/link'
-
 export const Footer: GlobalConfig = {
   slug: 'footer',
   access: {
@@ -12,7 +10,6 @@ export const Footer: GlobalConfig = {
       name: 'brandLogo',
       type: 'upload',
       relationTo: 'media',
-     
     },
     {
       name: 'navItems',
@@ -24,8 +21,8 @@ export const Footer: GlobalConfig = {
           type: 'relationship',
           relationTo: 'navCollections',
           hasMany: false,
-          required: false
-        }
+          required: false,
+        },
       ],
     },
     {
@@ -33,6 +30,5 @@ export const Footer: GlobalConfig = {
       label: 'Copyright',
       type: 'text',
     },
-
   ],
 }

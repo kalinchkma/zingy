@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Footer as F, Contact } from '../../../payload/payload-types'
+import { Contact, Footer as F } from '../../../payload/payload-types'
 import { fetchContact, fetchFooter } from '../../_api/fetchGlobals'
 import FooterComponent from './FooterComponent'
 
@@ -12,9 +12,8 @@ export async function Footer() {
   try {
     footer = await fetchFooter()
     contacts = await fetchContact()
-    
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
 
   return (

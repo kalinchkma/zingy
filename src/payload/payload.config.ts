@@ -1,6 +1,5 @@
 import { webpackBundler } from '@payloadcms/bundler-webpack' // bundler-import
 import { mongooseAdapter } from '@payloadcms/db-mongodb' // database-adapter-import
-
 // import formBuilder from '@payloadcms/plugin-form-builder'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import redirects from '@payloadcms/plugin-redirects'
@@ -14,6 +13,7 @@ import { buildConfig } from 'payload/config'
 
 import Categories from './collections/Categories'
 import { Media } from './collections/Media'
+import NavCollections from './collections/NavCollections'
 import { Orders } from './collections/Orders'
 import { Pages } from './collections/Pages'
 import Products from './collections/Products'
@@ -24,14 +24,12 @@ import { createPaymentIntent } from './endpoints/create-payment-intent'
 import { customersProxy } from './endpoints/customers'
 import { productsProxy } from './endpoints/products'
 import { seed } from './endpoints/seed'
+import { Contact } from './globals/Contact'
 import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
 import { priceUpdated } from './stripe/webhooks/priceUpdated'
 import { productUpdated } from './stripe/webhooks/productUpdated'
-
-import { Contact } from './globals/Contact'
-import NavCollections from './collections/NavCollections'
 
 const generateTitle: GenerateTitle = () => {
   return 'Zomgor'
@@ -147,6 +145,5 @@ export default buildConfig({
       generateTitle,
       uploadsCollection: 'media',
     }),
-   
   ],
 })

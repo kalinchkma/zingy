@@ -1,19 +1,20 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
-import { cn } from "../../_utilities/utils";
-import { MdArrowDropDown } from "react-icons/md"
+'use client'
+import React from 'react'
+import { MdArrowDropDown } from 'react-icons/md'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { cn } from '../../_utilities/utils'
 
 const transition = {
-  type: "spring",
+  type: 'spring',
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
   restDelta: 0.001,
   restSpeed: 0.001,
-};
+}
 
 export const MenuItem = ({
   setActive,
@@ -21,18 +22,18 @@ export const MenuItem = ({
   item,
   children,
   href,
-  toltip
+  toltip,
 }: {
-  setActive: (item: string) => void;
-  active: string | null;
-  item: string;
-  children?: React.ReactNode;
-  href: string,
-  toltip?:  {
-    toltipType?: "custom" | "new";
-    customMessage?: string;
-    id?: string;
-}[]
+  setActive: (item: string) => void
+  active: string | null
+  item: string
+  children?: React.ReactNode
+  href: string
+  toltip?: {
+    toltipType?: 'custom' | 'new'
+    customMessage?: string
+    id?: string
+  }[]
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative z-[9999999]">
@@ -42,17 +43,23 @@ export const MenuItem = ({
         href={href}
       >
         {item}
-        {
-          toltip && toltip.map((t, i) => (
-
-          <React.Fragment>
-            <div key={i} className={cn('flex items-center flex-nowrap leading-none px-[4px] py-0 bg-yellow-400 text-teal-950 text-[10px] absolute top-[-180%] left-[50%]  translate-x-[-50%] ')}>
-              {t.toltipType === "new" ? "New": t?.customMessage}
-            </div>
-            <MdArrowDropDown key={i} className="h-5 w-5 absolute top-[-100%] left-[50%]  translate-x-[-50%] text-yellow-400" />
-          </React.Fragment>
-          ))
-        }
+        {toltip &&
+          toltip.map((t, i) => (
+            <React.Fragment>
+              <div
+                key={i}
+                className={cn(
+                  'flex items-center flex-nowrap leading-none px-[4px] py-0 bg-yellow-400 text-teal-950 text-[10px] absolute top-[-180%] left-[50%]  translate-x-[-50%] ',
+                )}
+              >
+                {t.toltipType === 'new' ? 'New' : t?.customMessage}
+              </div>
+              <MdArrowDropDown
+                key={i}
+                className="h-5 w-5 absolute top-[-100%] left-[50%]  translate-x-[-50%] text-yellow-400"
+              />
+            </React.Fragment>
+          ))}
       </motion.a>
       {active !== null && (
         <motion.div
@@ -79,15 +86,15 @@ export const MenuItem = ({
         </motion.div>
       )}
     </div>
-  );
-};
+  )
+}
 
 export const Menu = ({
   setActive,
   children,
 }: {
-  setActive: (item: string | null) => void;
-  children: React.ReactNode;
+  setActive: (item: string | null) => void
+  children: React.ReactNode
 }) => {
   return (
     <nav
@@ -96,8 +103,8 @@ export const Menu = ({
     >
       {children}
     </nav>
-  );
-};
+  )
+}
 
 export const ProductItem = ({
   title,
@@ -105,10 +112,10 @@ export const ProductItem = ({
   href,
   src,
 }: {
-  title: string;
-  description: string;
-  href: string;
-  src: string;
+  title: string
+  description: string
+  href: string
+  src: string
 }) => {
   return (
     <Link href={href} className="flex space-x-2">
@@ -120,25 +127,22 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
-          {title}
-        </h4>
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">{title}</h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
       </div>
     </Link>
-  );
-};
+  )
+}
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
-      
       {...rest}
       className="text-neutral-700 dark:text-neutral-200 hover:text-black py-2 flex flex-row items-center gap-2"
     >
       {children}
     </Link>
-  );
-};
+  )
+}

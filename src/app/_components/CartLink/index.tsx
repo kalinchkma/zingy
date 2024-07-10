@@ -1,13 +1,12 @@
 'use client'
 
 import React, { Fragment, useEffect, useState } from 'react'
+import { FiShoppingBag } from 'react-icons/fi'
 import Link from 'next/link'
 
 import { useCart } from '../../_providers/Cart'
 
-
 import classes from './index.module.scss'
-import { FiShoppingBag } from "react-icons/fi";
 
 export const CartLink: React.FC<{
   className?: string
@@ -23,7 +22,7 @@ export const CartLink: React.FC<{
   return (
     <Link className={[classes.cartLink, className].filter(Boolean).join(' ')} href="/cart">
       <Fragment>
-        <FiShoppingBag className='h-5 w-5' />
+        <FiShoppingBag className="h-5 w-5" />
         {typeof length === 'number' && length > 0 && (
           <small className={classes.quantity}>({length})</small>
         )}

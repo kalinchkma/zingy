@@ -12,7 +12,7 @@ export const Header: GlobalConfig = {
       name: 'brandLogo',
       type: 'upload',
       relationTo: 'media',
-      required: false
+      required: false,
     },
     {
       name: 'navItems',
@@ -20,15 +20,15 @@ export const Header: GlobalConfig = {
       maxRows: 10,
       fields: [
         link({
-          appearances: false
+          appearances: false,
         }),
         {
           name: 'navCollections',
           type: 'relationship',
           relationTo: 'navCollections',
           hasMany: false,
-          required: false
-        }
+          required: false,
+        },
       ],
     },
   ],

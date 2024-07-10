@@ -1,9 +1,6 @@
 import { LINK_FIELDS } from './link'
 import { MEDIA_FIELDS } from './media'
 
-
-
-
 export const CONTACT = `
   Contact {
     contactAddress {

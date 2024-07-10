@@ -56,7 +56,6 @@ export const AdminBar: React.FC<{
             padding: 0,
             backgroundColor: 'transparent',
           }}
-          
         />
       </Gutter>
     </div>

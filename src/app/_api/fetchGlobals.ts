@@ -89,12 +89,10 @@ export async function fetchContact(): Promise<Contact> {
     }),
   })
     .then(res => {
-      
       if (!res.ok) throw new Error('Error fetching doc')
       return res.json()
     })
     ?.then(res => {
-      
       if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching footer')
       return res.data?.Contact
     })
@@ -102,11 +100,10 @@ export async function fetchContact(): Promise<Contact> {
   return contact
 }
 
-
 export const fetchGlobals = async (): Promise<{
   settings: Settings
   header: Header
-  footer: Footer,
+  footer: Footer
   contact: Contact
 }> => {
   // initiate requests in parallel, then wait for them to resolve
@@ -117,17 +114,13 @@ export const fetchGlobals = async (): Promise<{
   const footerData = fetchFooter()
   const contactData = fetchContact()
 
-  const [settings, header, footer, contact]: [Settings, Header, Footer, Contact] = await Promise.all([
-    await settingsData,
-    await headerData,
-    await footerData,
-    await contactData
-  ])
+  const [settings, header, footer, contact]: [Settings, Header, Footer, Contact] =
+    await Promise.all([await settingsData, await headerData, await footerData, await contactData])
 
   return {
     settings,
     header,
     footer,
-    contact
+    contact,
   }
 }

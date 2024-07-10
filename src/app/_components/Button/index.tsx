@@ -41,7 +41,7 @@ export const Button: React.FC<Props> = ({
     classNameFromProps,
     classes[`appearance--${appearance}`],
     invert && classes[`${appearance}--invert`],
-    'rounded-sm'
+    'rounded-sm',
   ]
     .filter(Boolean)
     .join(' ')

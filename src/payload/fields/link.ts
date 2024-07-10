@@ -116,7 +116,6 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
             width: '50%',
           },
         },
-      
       ],
     })
 
@@ -126,7 +125,7 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
       type: 'array',
       maxRows: 1,
       admin: {
-        width: '100%'
+        width: '100%',
       },
       fields: [
         {
@@ -135,95 +134,92 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
           type: 'select',
           options: [
             {
-              label: "Custom",
-              value: "custom"
+              label: 'Custom',
+              value: 'custom',
             },
             {
               label: 'New',
-              value: 'new'
-            }
-          ]
+              value: 'new',
+            },
+          ],
         },
         {
           name: 'customMessage',
           label: 'Custom Message',
           type: 'text',
           admin: {
-            condition: (_,siblingData) => siblingData.toltipType === "custom"
-          }
-        }
-      ]
+            condition: (_, siblingData) => siblingData.toltipType === 'custom',
+          },
+        },
+      ],
     })
 
-    linkResult.fields.push(
-      {
-        name: 'icon',
-        label: 'Icon',
-        type: 'array',
-        maxRows: 1,
-        admin: {
-          width: '100%'
-        },
-        fields: [
-          {
-            name: "iconType",
-            type: "select",
-            options: [
-              {
-                label: "Facebook",
-                value: 'facebook'
-              },
-              {
-                label: "WhatsApp",
-                value: 'whatsapp'
-              },
-              {
-                label: 'YouTube',
-                value: 'youtube'
-              },
-              {
-                label: 'Instagram',
-                value: 'instagram'
-              },
-              {
-                label: 'LinkedIn',
-                value: 'linkedin'
-              },
-              {
-                label: 'Discord',
-                value: 'discord'
-              },
-              {
-                label: 'Telegram',
-                value: 'telegram'
-              },
-              {
-                label: 'Twitter',
-                value: 'twitter'
-              },
-              {
-                label: 'GitHub',
-                value: 'github'
-              },
-              {
-                label: 'Custom',
-                value: 'custom'
-              }
-            ]
-          },
-          {
-            name: 'iconImage',
-            label: 'Icon Image',
-            type: 'upload',
-            relationTo: 'media',
-            admin: {
-              condition: (_, siblingData) => siblingData?.iconType === "custom"
-            }
-          }
-        ]
+    linkResult.fields.push({
+      name: 'icon',
+      label: 'Icon',
+      type: 'array',
+      maxRows: 1,
+      admin: {
+        width: '100%',
       },
-
-    )
+      fields: [
+        {
+          name: 'iconType',
+          type: 'select',
+          options: [
+            {
+              label: 'Facebook',
+              value: 'facebook',
+            },
+            {
+              label: 'WhatsApp',
+              value: 'whatsapp',
+            },
+            {
+              label: 'YouTube',
+              value: 'youtube',
+            },
+            {
+              label: 'Instagram',
+              value: 'instagram',
+            },
+            {
+              label: 'LinkedIn',
+              value: 'linkedin',
+            },
+            {
+              label: 'Discord',
+              value: 'discord',
+            },
+            {
+              label: 'Telegram',
+              value: 'telegram',
+            },
+            {
+              label: 'Twitter',
+              value: 'twitter',
+            },
+            {
+              label: 'GitHub',
+              value: 'github',
+            },
+            {
+              label: 'Custom',
+              value: 'custom',
+            },
+          ],
+        },
+        {
+          name: 'iconImage',
+          label: 'Icon Image',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            condition: (_, siblingData) => siblingData?.iconType === 'custom',
+          },
+        },
+      ],
+    })
   } else {
     linkResult.fields = [...linkResult.fields, ...linkTypes]
   }

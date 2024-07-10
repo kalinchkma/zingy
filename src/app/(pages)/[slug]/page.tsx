@@ -21,10 +21,10 @@ import { generateMeta } from '../../_utilities/generateMeta'
 export const dynamic = 'force-dynamic'
 
 import Categories from '../../_components/Categories'
+import { HomePageSearch } from '../../_components/HomePageSearch'
 import Promotion from '../../_components/Promotion'
 
 import classes from './index.module.scss'
-import { HomePageSearch } from '../../_components/HomePageSearch'
 
 export default async function Pages({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()

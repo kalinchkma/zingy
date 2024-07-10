@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload/types'
+
 import link from '../fields/link'
 
 const NavCollections: CollectionConfig = {
   slug: 'navCollections',
   labels: {
     singular: 'Navigation Collection',
-    plural: 'Navigation Collections'
+    plural: 'Navigation Collections',
   },
   admin: {
     useAsTitle: 'title',

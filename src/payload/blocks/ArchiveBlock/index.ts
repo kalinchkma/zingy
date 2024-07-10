@@ -12,7 +12,7 @@ export const Archive: Block = {
     richText({
       name: 'introContent',
       label: 'Intro Content',
-      required: false
+      required: false,
     }),
     {
       name: 'populateBy',

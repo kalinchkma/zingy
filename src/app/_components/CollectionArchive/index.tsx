@@ -175,11 +175,11 @@ export const CollectionArchive: React.FC<Props> = props => {
           />
         )} */}
         <Pagination
-            className={classes.pagination}
-            page={results.page}
-            totalPages={results.totalPages}
-            onClick={setPage}
-          />
+          className={classes.pagination}
+          page={results.page}
+          totalPages={results.totalPages}
+          onClick={setPage}
+        />
       </Fragment>
     </div>
   )
