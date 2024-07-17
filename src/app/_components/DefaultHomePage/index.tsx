@@ -3,6 +3,10 @@ import React from 'react'
 import { Gutter } from '../Gutter'
 import { HomePageSearch } from '../HomePageSearch'
 
+/**
+ * This component is deprecated
+ */
+
 const DefaultHomePage = () => {
   return (
     <Gutter>

@@ -67,7 +67,7 @@ export default async function Pages({ params: { slug = 'home' } }) {
         <section>
           {/* <Hero {...hero} /> */}
           {/* home page search */}
-          <DefaultHomePage />
+          {/* <DefaultHomePage /> */}
 
           {/* <Gutter className={classes.home}>
             <Categories categories={categories} />
