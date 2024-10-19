@@ -38,8 +38,9 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
               <div className="flex flex-col text-sm divide-y">
                 {navGroup?.navCollections?.navGroup.map((navLink, i) => (
                   <HoveredLink
-                    href={navLink.link?.url}
+                    href={navLink.link?.url ? navLink.link?.url : ''}
                     target={navLink.link?.newTab ? '_blank' : ''}
+                    key={i}
                   >
                     {navLink.link?.label}
                     {navLink.link?.toltip.map((t, i) => (

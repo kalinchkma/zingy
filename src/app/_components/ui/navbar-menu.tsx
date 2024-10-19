@@ -39,7 +39,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative z-[9999999]">
       <motion.a
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white text-sm font-bold relative"
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white text-sm font-medium relative"
         href={href}
       >
         {item}
@@ -127,7 +127,7 @@ export const ProductItem = ({
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">{title}</h4>
+        <h4 className="text-xl mb-1 text-black dark:text-white">{title}</h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
           {description}
         </p>
